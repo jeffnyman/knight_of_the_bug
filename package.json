@@ -4,7 +4,7 @@
   "description": "A pedagogical exploration into bug hunting.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jeffnyman/knight_of_the_bug/issues"
   },
-  "homepage": "https://github.com/jeffnyman/knight_of_the_bug#readme"
+  "homepage": "https://github.com/jeffnyman/knight_of_the_bug#readme",
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
 }
