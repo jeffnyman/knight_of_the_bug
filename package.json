@@ -8,7 +8,7 @@
     "cleanup": "del-cli --force game.js src/game.rollup.js",
     "babel": "babel src/game.rollup.js > game.js",
     "build": "npm run cleanup && npm run rollup && npm run babel",
-    "start": "http-server"
+    "start": "http-server -c-1 -a localhost -p 8080 -o"
   },
   "presets": [
     [
