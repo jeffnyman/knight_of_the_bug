@@ -1,6 +1,7 @@
 import * as title from "/title.js";
 import * as keyboard from "utilities/keyboard.js";
 
+let resolve = null;
 let element = null;
 
 function handleKeyEvent(e) {
@@ -12,6 +13,10 @@ function handleKeyEvent(e) {
   keyboard.pop();
 
   element.parentNode.removeChild(element);
+
+  // This signifies that the promise of the splash screen has been
+  // fulfilled.
+  resolve();
 }
 
 export function load(ele) {
@@ -21,4 +26,9 @@ export function load(ele) {
   element.appendChild(title.getContents());
 
   keyboard.push({ handleKeyEvent });
+
+  // This will effectively make the load function return a Promise
+  // only if the resolve() function has been called. And that only
+  // happens if the ENTER key is pressed on the splash screen.
+  return new Promise((r) => (resolve = r));
 }
