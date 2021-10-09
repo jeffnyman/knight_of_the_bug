@@ -1,2 +1,3 @@
-# knight_of_the_bug
+# Knight of the Bug
+
 A pedagogical exploration into bug hunting.
