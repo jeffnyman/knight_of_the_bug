@@ -4,6 +4,8 @@
   "description": "A pedagogical exploration into bug hunting.",
   "main": "index.js",
   "scripts": {
+    "rollup": "rollup --config",
+    "cleanup": "del-cli --force src/game.rollup.js",
     "start": "http-server"
   },
   "repository": {
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/jeffnyman/knight_of_the_bug#readme",
   "devDependencies": {
-    "http-server": "^13.0.2"
+    "http-server": "^13.0.2",
+    "rollup": "^2.58.0"
   }
 }
