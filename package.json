@@ -5,9 +5,20 @@
   "main": "index.js",
   "scripts": {
     "rollup": "rollup --config",
-    "cleanup": "del-cli --force src/game.rollup.js",
+    "cleanup": "del-cli --force game.js src/game.rollup.js",
+    "babel": "babel src/game.rollup.js > game.js",
+    "build": "npm run cleanup && npm run rollup && npm run babel",
     "start": "http-server"
   },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeffnyman/knight_of_the_bug.git"
@@ -23,6 +34,10 @@
   },
   "homepage": "https://github.com/jeffnyman/knight_of_the_bug#readme",
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "del-cli": "^4.0.1",
     "http-server": "^13.0.2",
     "rollup": "^2.58.0"
   }
