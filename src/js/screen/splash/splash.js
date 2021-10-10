@@ -1,4 +1,5 @@
 import * as title from "/title.js";
+import * as ground from "/ground.js";
 import * as keyboard from "utilities/keyboard.js";
 
 let resolve = null;
@@ -24,6 +25,9 @@ export function load(ele) {
 
   element = ele;
   element.appendChild(title.getContents());
+  element.appendChild(ground.getContents());
+
+  ground.construct();
 
   keyboard.push({ handleKeyEvent });
 

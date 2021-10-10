@@ -51,3 +51,14 @@ body > * {
   top: 1.2em;
   color: goldenrod;
 }
+
+#game .ground {
+  bottom: 3em;
+  right: 1ch;
+  white-space: pre;
+  font-family: monospace;
+}
+
+#game .ground .grass {
+  color: #3c3;
+}
