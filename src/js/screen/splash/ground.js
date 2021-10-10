@@ -17,8 +17,36 @@ const KNIGHT = [
   "  /_|_\\  ",
 ];
 
+const FLOWER = [
+  "     ",
+  "     ",
+  "     ",
+  "     ",
+  "     ",
+  " .:. ",
+  "-=o=-",
+  " ':' ",
+  " \\|/ ",
+];
+
 function applyKnightColors(ch) {
   let color = "#aae";
+  return `<span style="color:${color}">${ch}</span>`;
+}
+
+function applyFlowerColors(ch) {
+  let color = "#f00";
+
+  if (ch == "o") {
+    color = "#ff0";
+  }
+
+  if (ch == "\\" || ch == "/" || ch == "|") {
+    color = "lime";
+  }
+
+  ch = ch.replace(/</, "&lt;").replace(/>/, "&gt;");
+
   return `<span style="color:${color}">${ch}</span>`;
 }
 
@@ -43,6 +71,9 @@ export function construct() {
   // rather than stopping after the first match.
   let knight = KNIGHT.join("\n").replace(/\S/g, applyKnightColors).split("\n");
 
+  // The same logic for the knight applies to the flower.
+  let flower = FLOWER.join("\n").replace(/\S/g, applyFlowerColors).split("\n");
+
   // The goal now is to build up a "final view" of what the ground of the
   // splash screen will look like, given all the elements going on it. So a
   // "final view" will be built up that can ultimately be pushed as the set
@@ -50,17 +81,21 @@ export function construct() {
   let finalView = [];
 
   for (let i = 0; i < knight.length; i++) {
-    let knight_columns = columns;
+    let object_columns = columns;
 
     // The knight will not have any specific styling to move it around the
     // screen relative to other elements. Thus the simple approach here is
     // to leave some spacing for the knight. What this is doing is saying
-    // where, on the grass portion, the knight will appear.
-    knight_columns -= knight.length;
+    // where, on the grass portion, the knight will appear. The same applies
+    // to the flower.
+    object_columns -= knight.length;
+    object_columns -= flower.length;
 
     // A row is now drawn with the knight. The spaces at the end are what
     // push the knight to the left of the splash screen.
-    let row = `${knight[i]}${new Array(knight_columns + 1).join(" ")}`;
+    let row = `${knight[i]}${new Array(object_columns + 1).join(" ")}${
+      flower[i]
+    }`;
 
     finalView.push(row);
   }
