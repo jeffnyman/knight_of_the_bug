@@ -72,3 +72,10 @@ body > * {
 #game .blurb span {
   color: #fff;
 }
+
+#game .tower {
+  font-family: monospace;
+  white-space: pre;
+  right: 6ch;
+  bottom: 4.2em;
+}
