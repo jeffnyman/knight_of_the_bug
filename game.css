@@ -62,3 +62,13 @@ body > * {
 #game .ground .grass {
   color: #3c3;
 }
+
+#game .blurb {
+  left: 26ch;
+  right: 28ch;
+  bottom: 6.6em;
+}
+
+#game .blurb span {
+  color: #fff;
+}
