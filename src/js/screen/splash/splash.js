@@ -21,6 +21,10 @@ function handleKeyEvent(e) {
   resolve();
 }
 
+function onResize() {
+  ground.construct();
+}
+
 export function load(ele) {
   console.log("Splash screen loaded.");
 
@@ -32,6 +36,8 @@ export function load(ele) {
   ground.construct();
 
   keyboard.push({ handleKeyEvent });
+
+  window.addEventListener("resize", onResize);
 
   // This will effectively make the load function return a Promise
   // only if the resolve() function has been called. And that only
