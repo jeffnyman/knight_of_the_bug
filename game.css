@@ -83,3 +83,11 @@ body > * {
 #game .tower span:not(.transparent) {
   background-color: #222;
 }
+
+#game .tidbit {
+  color: #666;
+  left: 1ch;
+  bottom: 1.2em;
+  right: 1ch;
+  text-align: center;
+}

@@ -2,6 +2,7 @@ import * as title from "/title.js";
 import * as ground from "/ground.js";
 import * as blurb from "/blurb.js";
 import * as tower from "/tower.js";
+import * as tidbit from "/tidbit.js";
 import * as keyboard from "utilities/keyboard.js";
 
 let resolve = null;
@@ -35,6 +36,7 @@ export function load(ele) {
   element.appendChild(ground.getContents());
   element.appendChild(blurb.getContents());
   element.appendChild(tower.getContents());
+  element.appendChild(tidbit.getContents());
 
   ground.construct();
   tower.construct();
