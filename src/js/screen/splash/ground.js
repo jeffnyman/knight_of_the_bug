@@ -4,6 +4,7 @@ element.classList.add("ground");
 element.innerHTML = "GROUND";
 
 const GROUND = "xxxxxxxxxx";
+const SPACING = "  ";
 
 const KNIGHT = [
   "   .-.   ",
@@ -83,19 +84,21 @@ export function construct() {
   for (let i = 0; i < knight.length; i++) {
     let object_columns = columns;
 
+    object_columns -= SPACING.length;
+
     // The knight will not have any specific styling to move it around the
     // screen relative to other elements. Thus the simple approach here is
     // to leave some spacing for the knight. What this is doing is saying
     // where, on the grass portion, the knight will appear. The same applies
     // to the flower.
     object_columns -= knight.length;
-    object_columns -= flower.length;
+    object_columns -= flower.length - 4;
 
     // A row is now drawn with the knight. The spaces at the end are what
     // push the knight to the left of the splash screen.
-    let row = `${knight[i]}${new Array(object_columns + 1).join(" ")}${
-      flower[i]
-    }`;
+    let row = `${SPACING}${knight[i]}${new Array(object_columns + 1).join(
+      " "
+    )}${flower[i]}`;
 
     finalView.push(row);
   }
