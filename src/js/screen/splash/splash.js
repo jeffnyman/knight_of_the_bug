@@ -24,6 +24,7 @@ function handleKeyEvent(e) {
 
 function onResize() {
   ground.construct();
+  tower.construct();
 }
 
 export function load(ele) {
