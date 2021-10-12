@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Metrickal;
+  src: url(fonts/Metrickal-Regular.otf);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +12,7 @@ body {
   margin: 0;
   color: #aaa;
   background-color: #000;
+  font-family: monospace;
 }
 
 body > * {
@@ -45,7 +51,6 @@ body > * {
 }
 
 #game .title {
-  font-family: monospace;
   white-space: pre;
   left: 2ch;
   top: 1.2em;
@@ -56,7 +61,6 @@ body > * {
   bottom: 3em;
   right: 1ch;
   white-space: pre;
-  font-family: monospace;
 }
 
 #game .ground .grass {
@@ -67,6 +71,7 @@ body > * {
   left: 26ch;
   right: 28ch;
   bottom: 6.6em;
+  font-family: Metrickal, monospace;
 }
 
 #game .blurb span {
@@ -74,7 +79,6 @@ body > * {
 }
 
 #game .tower {
-  font-family: monospace;
   white-space: pre;
   right: 6ch;
   bottom: 4.2em;
@@ -90,4 +94,5 @@ body > * {
   bottom: 1.2em;
   right: 1ch;
   text-align: center;
+  font-family: Metrickal, monospace;
 }
