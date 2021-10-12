@@ -24,6 +24,46 @@ function get_random(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
+function applyTowerColors(ch, index, str) {
+  // These "default colors" will apply to any elements of the tower that
+  // are not directly colored in the logic below. What this amounts to is
+  // that the various separators will have slightly varying shades applied
+  // to them. A way to see the effect is to just change the list provided
+  // to something like: ["blue", "red", "purple"].
+  let color = get_random(["#888", "#aaa", "#999"]);
+  let transparent = false;
+
+  switch (ch) {
+    case "?":
+      color = "red";
+      transparent = true;
+      break;
+    case "#":
+      color = get_random(["#383", "#262"]);
+      break;
+    case "*":
+      color = "pink";
+      break;
+    case "/":
+    case "\\":
+      // This is handling the grass at the base of the tower.
+      if (str.charAt(index - 1) == ch || str.charAt(index + 1) == ch) {
+        color = "lime";
+        transparent = true;
+      }
+      break;
+  }
+
+  // This bit just handles the very top of the tower.
+  if (ch == "_" && str.charAt(index - 1) == " ") {
+    transparent = true;
+  }
+
+  return `<span style="color:${color}" ${
+    transparent ? "class='transparent'" : ""
+  }>${ch}</span>`;
+}
+
 function build_middle_levels() {
   // The goal here is to construct the middle levels of the tower, which
   // means everything between the TOP and BOTTOM.
@@ -101,7 +141,7 @@ export function construct() {
 
   all_levels = all_levels.concat(BOTTOM);
 
-  element.innerHTML = all_levels.join("\n");
+  element.innerHTML = all_levels.join("\n").replace(/\S/g, applyTowerColors);
 }
 
 export function getContents() {

@@ -79,3 +79,7 @@ body > * {
   right: 6ch;
   bottom: 4.2em;
 }
+
+#game .tower span:not(.transparent) {
+  background-color: #222;
+}
