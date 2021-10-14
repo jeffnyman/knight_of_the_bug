@@ -96,3 +96,15 @@ body > * {
   text-align: center;
   font-family: Metrickal, monospace;
 }
+
+#map {
+  left: 0;
+  top: 0;
+  width: 60vw;
+  height: 60vh;
+  overflow: hidden;
+}
+
+#map canvas {
+  position: relative;
+}

@@ -1,7 +1,12 @@
 import Grid from "utilities/grid.js";
 
-let display = new ROT.Display();
-let options = {};
+let options = {
+  width: 1,
+  height: 1,
+  spacing: 1.1,
+};
+
+let display = new ROT.Display(options);
 
 function construct() {
   let node = display.getContainer();
@@ -30,10 +35,26 @@ function construct() {
   options.height = grid_size[1];
 
   display.setOptions(options);
+
+  let current = new Grid(node.offsetWidth, node.offsetHeight);
+  let offset = grid_space.minus(current).scale(0.5);
+
+  console.log(current);
+  console.log(offset.x);
+  console.log(offset.y);
+
+  node.style.left = `${offset.x}px`;
+  node.style.top = `${offset.y}px`;
+}
+
+function activate() {
+  let map = display.getContainer().parentNode;
+  console.log(map);
 }
 
 export function setup(parent) {
   parent.appendChild(display.getContainer());
 
   construct();
+  activate();
 }
