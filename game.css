@@ -118,6 +118,13 @@ body > * {
   border: 6px solid #000;
 }
 
+#combat {
+  right: 0;
+  top: 0;
+  width: 40vw;
+  height: 60vh;
+}
+
 .hidden {
   opacity: 0;
 }
