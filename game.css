@@ -108,3 +108,7 @@ body > * {
 #map canvas {
   position: relative;
 }
+
+.hidden {
+  opacity: 0;
+}

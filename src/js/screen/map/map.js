@@ -49,6 +49,7 @@ function construct() {
 
 function activate() {
   let map = display.getContainer().parentNode;
+  map.classList.remove("hidden");
   console.log(map);
 }
 
