@@ -109,6 +109,15 @@ body > * {
   position: relative;
 }
 
+#log {
+  left: 0;
+  bottom: 0;
+  width: 60vw;
+  height: 40vh;
+  overflow: hidden;
+  border: 6px solid #000;
+}
+
 .hidden {
   opacity: 0;
 }
