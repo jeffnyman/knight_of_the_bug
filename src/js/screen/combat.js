@@ -3,4 +3,6 @@ export function setup(parent) {
   heading.innerHTML = "Game of Tests";
 
   parent.appendChild(heading);
+
+  console.log(parent);
 }

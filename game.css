@@ -125,6 +125,14 @@ body > * {
   height: 60vh;
 }
 
+#status {
+  right: 0;
+  bottom: 0;
+  width: 40vw;
+  height: 40vh;
+  border: 6px solid #000;
+}
+
 .hidden {
   opacity: 0;
 }
