@@ -118,6 +118,10 @@ body > * {
   border: 6px solid #000;
 }
 
+#log p {
+  margin-top: 0;
+}
+
 #combat {
   right: 0;
   top: 0;
