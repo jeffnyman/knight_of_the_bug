@@ -19,6 +19,7 @@ function start() {
   status.setup(document.querySelector("#status"));
 
   log.add("It's a time for heroic testers!");
+  log.pause();
 }
 
 splash.load(document.querySelector("#game")).then(start);
