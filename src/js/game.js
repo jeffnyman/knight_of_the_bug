@@ -19,6 +19,16 @@ function start() {
   status.setup(document.querySelector("#status"));
 
   log.add("It's a time for heroic testers!");
+  log.add(
+    "The application tower is surrounded by code and there is a bug lurking on the top floor."
+  );
+  log.pause();
+  log.add(
+    "Apparently the only way to get to it is to advance through all levels of code."
+  );
+  log.add(
+    "To move around, use {#fff}arrow keys{}, {#fff}numpad{} or {#fff}vi-keys{}."
+  );
   log.pause();
 }
 
